@@ -1,21 +1,15 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Region {
     private String nameOfRegion;
-    private List<District> districts = new ArrayList<>();
+    private List<District> districts;
     private City mainCity;
 
     public Region(String nameOfRegion, City mainCity) {
         this.nameOfRegion = nameOfRegion;
         this.mainCity = mainCity;
-    }
-
-    public Region(String nameOfRegion, City mainCity, District...districts) {
-        this.nameOfRegion = nameOfRegion;
-        this.mainCity = mainCity;
-        this.districts.addAll(Arrays.asList(districts));
+        districts = new ArrayList<>();
     }
 
     public void addDistrict(District district) {

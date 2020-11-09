@@ -1,21 +1,24 @@
 //Создать объект класса Государство, используя классы Область, Район, Город.
 //Методы: вывести на консоль столицу, количество областей, площадь, областные центры.
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Country {
-    private Region[]regions;
+    private List<Region> regions;
     private String nameOfCountry;
     private double area;
     City capitalCity;
 
     public Country() {
-
+        this.regions = new ArrayList<>();
     }
 
-    public Country(String nameOfCountry, City capitalCity, double area, Region...regions) {
+    public Country(String nameOfCountry, City capitalCity, double area) {
         this.nameOfCountry = nameOfCountry;
         this.capitalCity = capitalCity;
         this.area = area;
-        this.regions = regions;
+        this.regions = new ArrayList<>();
     }
 
     public void printCapitalCity() {
@@ -23,7 +26,7 @@ public class Country {
     }
 
     public void printNumberOfRegions() {
-        System.out.println("Number of regions: " + regions.length);
+        System.out.println("Number of regions: " + regions.size());
     }
 
     public void printArea() {
@@ -36,11 +39,11 @@ public class Country {
             System.out.println(region.getMainCity().getNameOfCity());
     }
 
-    public Region[] getRegions() {
+    public List<Region> getRegions() {
         return regions;
     }
 
-    public void setRegions(Region[] regions) {
+    public void setRegions(List<Region> regions) {
         this.regions = regions;
     }
 
